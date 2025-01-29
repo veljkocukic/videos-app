@@ -1,8 +1,10 @@
 import ClipLoader from "react-spinners/ClipLoader";
 
-export const Loader = () => {
-    return <div className="loader"><ClipLoader
-        color='#3499fe'
+export const Loader = ({ image }: { image?: boolean }) => {
+    let cName = 'loader'
+    if (image) cName += ' image-loader'
+    return <div className={cName}><ClipLoader
+        color={'#3499fe'}
         loading={true}
         size={150}
         aria-label="Loading Spinner"

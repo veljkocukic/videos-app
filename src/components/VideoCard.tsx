@@ -6,10 +6,8 @@ export const VideoCard = ({ link, label, preview }: IVideoCard) => {
     const [canPlay, setCanPlay] = useState(false);
 
     const renderImage = () => {
-        if (isHovered) {
-            if (canPlay) {
-                return null;
-            }
+        if (isHovered && canPlay) {
+            return null;
         }
         return <img loading="lazy" alt="preview" src={preview} className="thumbnail" />
     }
